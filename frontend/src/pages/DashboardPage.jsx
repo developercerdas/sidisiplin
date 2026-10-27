@@ -98,7 +98,36 @@ export default function DashboardPage({ user, onLogout }) {
       if (bkRes.success) setSesiBK(bkRes.data);
       if (setRes.success && setRes.data) setPengaturan(setRes.data);
     } catch (err) {
-      console.log('Error loading data:', err);
+      console.log('Mode Live Demo GitHub Pages Aktif - Menggunakan Data Showcase');
+      setSiswaList([
+        { id: 1, nisn: '0081234561', barcode_id: 'SISWA-001', nama: 'Ahmad Fauzi Rahman', nama_kelas: 'VII A', nama_ortu: 'Bpk. Ridwan Fauzi', no_wa_ortu: '081234567890', total_poin_pelanggaran: 15, status_sp: 'AMAN' },
+        { id: 2, nisn: '0081234562', barcode_id: 'SISWA-002', nama: 'Siti Nur Aisyah', nama_kelas: 'VII A', nama_ortu: 'Ibu Fatimah Az-Zahra', no_wa_ortu: '081234567891', total_poin_pelanggaran: 0, status_sp: 'AMAN' },
+        { id: 3, nisn: '0081234563', barcode_id: 'SISWA-003', nama: 'Muhammad Daffa Al-Fatih', nama_kelas: 'IX A', nama_ortu: 'Bpk. Herman Susanto', no_wa_ortu: '081234567892', total_poin_pelanggaran: 55, status_sp: 'SP1 (Panggilan Ortu)' },
+        { id: 4, nisn: '0081234564', barcode_id: 'SISWA-004', nama: 'Rizky Bilal Maulana', nama_kelas: 'VIII B', nama_ortu: 'Bpk. Slamet Riyadi', no_wa_ortu: '081234567893', total_poin_pelanggaran: 30, status_sp: 'PERINGATAN' },
+        { id: 5, nisn: '0081234565', barcode_id: 'SISWA-005', nama: 'Zahra Putri Ramadhani', nama_kelas: 'VII A', nama_ortu: 'Ibu Nurhayati', no_wa_ortu: '081234567894', total_poin_pelanggaran: 5, status_sp: 'AMAN' }
+      ]);
+      setKategoriList([
+        { id: 1, kode: 'IBD-01', nama_pelanggaran: 'Tidak mengikuti Sholat Dhuha / Dzuhur Berjamaah', kategori: 'IBADAH', bobot_poin: 10 },
+        { id: 2, kode: 'IBD-02', nama_pelanggaran: 'Tidak membawa kelengkapan ibadah (mukena/sarung/Al-Quran)', kategori: 'IBADAH', bobot_poin: 5 },
+        { id: 3, kode: 'TAT-01', nama_pelanggaran: 'Atribut seragam tidak lengkap / tidak rapi', kategori: 'RINGAN', bobot_poin: 5 },
+        { id: 4, kode: 'TAT-02', nama_pelanggaran: 'Terlambat hadir ke madrasah > 15 menit', kategori: 'RINGAN', bobot_poin: 5 },
+        { id: 5, kode: 'TAT-04', nama_pelanggaran: 'Membolos jam pelajaran / keluar tanpa izin', kategori: 'SEDANG', bobot_poin: 20 },
+        { id: 6, kode: 'TAT-05', nama_pelanggaran: 'Merokok di area madrasah / berseragam', kategori: 'SEDANG', bobot_poin: 25 },
+        { id: 7, kode: 'BRT-01', nama_pelanggaran: 'Berkelahi / Terlibat tawuran antar pelajar', kategori: 'BERAT', bobot_poin: 50 }
+      ]);
+      setRadarBK([
+        { id: 3, nisn: '0081234563', nama: 'Muhammad Daffa Al-Fatih', nama_kelas: 'IX A', total_poin_pelanggaran: 55, status_sp: 'SP1 (Panggilan Ortu)', nama_ortu: 'Bpk. Herman Susanto', no_wa_ortu: '081234567892' },
+        { id: 4, nisn: '0081234564', nama: 'Rizky Bilal Maulana', nama_kelas: 'VIII B', total_poin_pelanggaran: 30, status_sp: 'PERINGATAN', nama_ortu: 'Bpk. Slamet Riyadi', no_wa_ortu: '081234567893' }
+      ]);
+      setRiwayatPelanggaran([
+        { id: 1, tanggal: '2026-10-27', nama_siswa: 'Muhammad Daffa Al-Fatih', nama_kelas: 'IX A', nama_pelanggaran: 'Merokok di area madrasah / berseragam', poin_diberikan: 25, catatan: 'Di belakang kantin saat istirahat', nama_pelapor: 'Ustadz Hendra Gunawan' },
+        { id: 2, tanggal: '2026-10-27', nama_siswa: 'Ahmad Fauzi Rahman', nama_kelas: 'VII A', nama_pelanggaran: 'Terlambat hadir ke madrasah > 15 menit', poin_diberikan: 5, catatan: 'Ban motor bocor', nama_pelapor: 'Guru Piket' }
+      ]);
+      setWaLogs([
+        { id: 1, no_tujuan: '081234567892', tipe: 'PELANGGARAN', pesan: 'Assalamu’alaikum Wr. Wb. Yth. Bpk. Herman Susanto. Pihak madrasah menginformasikan bahwa ananda Muhammad Daffa Al-Fatih (IX A) tercatat melakukan pelanggaran: "Merokok" (+25 pt). Total akumulasi poin: 55 pt (SP1). Mohon bimbingan bersama.', status: 'SENT', created_at: '2026-10-27 10:15:22' },
+        { id: 2, no_tujuan: '081234567890', tipe: 'TEST', pesan: 'Tes kirim notifikasi via Botcake WhatsApp API (Status: SENT)', status: 'SENT', created_at: '2026-10-27 18:48:30' }
+      ]);
+      setStats({ total_siswa: 5, hadir: 3, terlambat: 1, sakit: 0, izin: 0, alpa: 1, belum_scan: 0 });
     }
   };
 

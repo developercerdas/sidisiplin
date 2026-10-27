@@ -118,8 +118,39 @@ export default function KioskPage() {
         playBeep('error');
       }
     } catch (err) {
-      setMessage({ text: 'Koneksi ke server terputus. Pastikan backend aktif!', type: 'error' });
-      playBeep('error');
+      // Fallback Demo Online GitHub Pages
+      const mockDb = {
+        'SISWA-001': { id: 1, nama: 'Ahmad Fauzi Rahman', nisn: '0081234561', kelas: 'VII A', poin: 15, status_sp: 'AMAN' },
+        'SISWA-002': { id: 2, nama: 'Siti Nur Aisyah', nisn: '0081234562', kelas: 'VII A', poin: 0, status_sp: 'AMAN' },
+        'SISWA-003': { id: 3, nama: 'Muhammad Daffa Al-Fatih', nisn: '0081234563', kelas: 'IX A', poin: 55, status_sp: 'SP1 (Panggilan Ortu)' }
+      };
+
+      const found = mockDb[code] || { id: 99, nama: `Santri Baru (${code})`, nisn: '0089998811', kelas: 'VII A', poin: 5, status_sp: 'AMAN' };
+      const timeStr = new Date().toTimeString().split(' ')[0];
+      const isLate = new Date().getHours() >= 7;
+
+      const mockData = {
+        siswa: found,
+        status: isLate ? 'TERLAMBAT' : 'HADIR',
+        jam_masuk: timeStr,
+        menit_terlambat: isLate ? 15 : 0
+      };
+
+      setLatestScan(mockData);
+      setScanHistory((prev) => [mockData, ...prev.slice(0, 7)]);
+      setStats((prev) => ({
+        ...prev,
+        total_siswa: 5,
+        hadir: isLate ? prev.hadir : prev.hadir + 1,
+        terlambat: isLate ? prev.terlambat + 1 : prev.terlambat,
+        belum_scan: Math.max(0, prev.belum_scan - 1)
+      }));
+
+      setMessage({ 
+        text: `Presensi Berhasil (${mockData.status === 'HADIR' ? 'Tepat Waktu' : 'Terlambat 15 Menit'})`, 
+        type: mockData.status === 'HADIR' ? 'success' : 'warning' 
+      });
+      playBeep(mockData.status === 'HADIR' ? 'success' : 'warning');
     } finally {
       setBarcodeInput('');
       setIsProcessing(false);

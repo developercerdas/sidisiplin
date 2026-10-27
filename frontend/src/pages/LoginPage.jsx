@@ -33,7 +33,25 @@ export default function LoginPage({ onLoginSuccess }) {
         setError(data.message || 'Login gagal');
       }
     } catch (err) {
-      setError('Gagal menghubungi server. Pastikan backend aktif!');
+      // Fallback untuk Live Demo Online GitHub Pages (tanpa backend lokal)
+      console.log('Mode Live Demo GitHub Pages Aktif');
+      const mockUser = {
+        id: 2,
+        nama: email.includes('bk') ? 'Ustadzah Siti Rahmawati, S.Psi (Guru BK)' :
+              email.includes('tatib') ? 'Ustadz Hendra Gunawan, S.Pd (Kesiswaan)' :
+              email.includes('kepala') ? 'Drs. H. Ahmad Subagio, M.Pd (Kepala)' :
+              email.includes('walikelas') ? 'Ustadzah Nurul Hidayah, S.Pd (Wali Kelas)' : 'Administrator IT',
+        email: email,
+        role: email.includes('bk') ? 'bk' :
+              email.includes('tatib') ? 'tatib' :
+              email.includes('kepala') ? 'kepala' :
+              email.includes('walikelas') ? 'wali_kelas' : 'admin',
+        no_wa: '081234567890'
+      };
+      localStorage.setItem('user_token', 'demo-token-live');
+      localStorage.setItem('user_profile', JSON.stringify(mockUser));
+      if (onLoginSuccess) onLoginSuccess(mockUser);
+      navigate('/dashboard');
     } finally {
       setLoading(false);
     }
