@@ -183,11 +183,14 @@ export default function KioskPage() {
                 <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
                   KIOS GERBANG
                 </span>
-                <span className="text-[10px] text-slate-400 font-medium hidden sm:inline">• MTsN / MA</span>
+                <span className="text-[10px] text-slate-400 font-medium hidden sm:inline">• MTsN / MA TELADAN</span>
               </div>
-              <h1 className="text-base md:text-xl font-black tracking-tight text-white">
+              <h1 className="text-base md:text-xl font-black tracking-tight text-white leading-tight">
                 SIDISIPLIN MADRASAH
               </h1>
+              <p className="text-[10px] md:text-[11px] text-emerald-400/90 font-medium tracking-wide leading-none mt-0.5 hidden xs:block">
+                Sistem Informasi Disiplin Siswa, Presensi Barcode &amp; Layanan Konseling
+              </p>
             </div>
           </div>
 

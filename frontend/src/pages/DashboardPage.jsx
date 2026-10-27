@@ -313,7 +313,7 @@ export default function DashboardPage({ user, onLogout }) {
           </div>
           <div>
             <h2 className="text-xs font-black text-white leading-tight">SIDISIPLIN</h2>
-            <p className="text-[10px] text-emerald-400 font-bold uppercase">{currentUser?.role || 'Guru'}</p>
+            <p className="text-[9px] text-emerald-400 font-bold uppercase truncate max-w-[170px]">Disiplin, Presensi &amp; BK</p>
           </div>
         </div>
 
@@ -350,7 +350,8 @@ export default function DashboardPage({ user, onLogout }) {
               </div>
               <div className="truncate">
                 <h2 className="text-sm font-black text-white leading-tight">SIDISIPLIN</h2>
-                <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">Madrasah Teladan</p>
+                <p className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">Disiplin Siswa &amp; BK</p>
+                <p className="text-[8px] text-slate-400 leading-tight">Presensi Barcode &amp; Konseling</p>
               </div>
             </div>
 

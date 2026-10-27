@@ -125,7 +125,10 @@ export default function LoginPage({ onLoginSuccess }) {
             PORTAL GURU &amp; STAF
           </span>
           <h2 className="text-xl md:text-2xl font-black text-white mt-2">Masuk ke SIDISIPLIN</h2>
-          <p className="text-xs text-slate-400">MTsN / MA Teladan</p>
+          <p className="text-[11px] font-bold text-emerald-400 mt-1">
+            Sistem Informasi Disiplin Siswa, Presensi &amp; Layanan Konseling
+          </p>
+          <p className="text-[10px] text-slate-400 mt-0.5">MTsN / MA Teladan • Terintegrasi WhatsApp Botcake</p>
         </div>
 
         {error && (
