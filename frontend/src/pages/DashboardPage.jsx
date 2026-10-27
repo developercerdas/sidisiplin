@@ -1141,11 +1141,6 @@ export default function DashboardPage({ user, onLogout }) {
             </form>
           </div>
         )}
-
-        {/* DEVELOPER FOOTER BRANDING */}
-        <div className="mt-12 pt-6 border-t border-slate-800/80">
-          <DeveloperBranding />
-        </div>
       </main>
     </div>
   );
