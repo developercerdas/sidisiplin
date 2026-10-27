@@ -1,5 +1,5 @@
-# SI-DISIPLIN & BK MADRASAH (SIBK-MADRASAH)
-> **Sistem Informasi Presensi Barcode Kios, Kedisiplinan Poin & Bimbingan Konseling Madrasah (MTs/MA) Terintegrasi WhatsApp Gateway**
+# SIDISIPLIN MADRASAH
+> **Sistem Informasi Presensi Barcode Kios, Kedisiplinan Poin & Bimbingan Konseling Madrasah (MTs/MA) Terintegrasi WhatsApp Botcake**
 
 ---
 

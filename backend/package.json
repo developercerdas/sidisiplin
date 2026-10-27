@@ -1,5 +1,5 @@
 {
-  "name": "sibk-madrasah-backend",
+  "name": "sidisiplin-backend",
   "version": "1.0.0",
   "description": "Backend API & Socket.io Service untuk SI-DISIPLIN & BK Madrasah",
   "main": "src/server.js",

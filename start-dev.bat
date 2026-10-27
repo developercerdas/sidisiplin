@@ -1,6 +1,6 @@
 @echo off
 echo ===================================================
-echo   SI-DISIPLIN & BK MADRASAH (SIBK-MADRASAH)
-echo   Menjalankan Backend & Frontend Bersamaan...
+echo   SIDISIPLIN MADRASAH (Presensi Barcode & BK)
+echo   Integrasi WhatsApp Botcake / Pancake
 echo ===================================================
 npm run dev
