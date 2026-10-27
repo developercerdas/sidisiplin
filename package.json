@@ -1,0 +1,12 @@
+{
+  "name": "sibk-madrasah",
+  "version": "1.0.0",
+  "description": "Sistem Informasi Presensi Barcode, Disiplin & BK Madrasah",
+  "scripts": {
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"blue,green\" \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "start": "concurrently -n \"BACKEND,FRONTEND\" -c \"blue,green\" \"npm start --prefix backend\" \"npm run preview --prefix frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
