@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import io from 'socket.io-client';
+import DeveloperBranding from '../components/DeveloperBranding';
 
 const API_BASE = 'http://localhost:5000/api';
 
@@ -431,15 +432,26 @@ export default function KioskPage() {
         </div>
       </main>
 
-      {/* 3. RUNNING TEXT FOOTER */}
-      <footer className="bg-slate-900/90 border-t border-slate-800 px-4 py-2.5 flex items-center gap-3 text-xs shrink-0">
-        <span className="px-2 py-0.5 rounded bg-emerald-500 text-slate-950 font-black uppercase text-[9px] md:text-[10px] shrink-0">
-          INFO
-        </span>
-        <div className="overflow-hidden whitespace-nowrap flex-1 text-slate-300 font-medium text-[11px] md:text-xs">
-          <marquee behavior="scroll" direction="left" scrollamount="5">
-            ✨ Selamat Datang di MTsN / MA Teladan • Budayakan 5S (Senyum, Salam, Sapa, Sopan, Santun) • Batas akhir presensi masuk tepat waktu pukul 07.00 WIB • Integrasi WhatsApp Botcake Aktif ✨
-          </marquee>
+      {/* 3. RUNNING TEXT FOOTER & DEVELOPER BRANDING */}
+      <footer className="bg-slate-900/95 border-t border-slate-800 px-4 py-2.5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs shrink-0">
+        <div className="flex items-center gap-2.5 w-full md:w-auto flex-1 min-w-0">
+          <span className="px-2 py-0.5 rounded bg-emerald-500 text-slate-950 font-black uppercase text-[9px] md:text-[10px] shrink-0">
+            INFO MADRASAH
+          </span>
+          <div className="overflow-hidden whitespace-nowrap flex-1 text-slate-300 font-medium text-[11px] md:text-xs">
+            <marquee behavior="scroll" direction="left" scrollamount="5">
+              ✨ Selamat Datang di MTsN / MA Teladan • Budayakan 5S (Senyum, Salam, Sapa, Sopan, Santun) • Batas akhir presensi masuk tepat waktu pukul 07.00 WIB • Didukung Hardware POS Barcode Scanner &amp; WhatsApp Botcake ✨
+            </marquee>
+          </div>
+        </div>
+
+        {/* DEVELOPER BADGE */}
+        <div className="shrink-0 flex items-center gap-2 border-t md:border-t-0 border-slate-800 pt-1.5 md:pt-0 w-full md:w-auto justify-end">
+          <span className="text-[10px] text-slate-400 font-medium">Powered by:</span>
+          <span className="text-[10px] font-black text-white">CV. ISTANA BARCODE COMPUTER</span>
+          <span className="px-2 py-0.5 rounded-full border border-cyan-400 text-cyan-400 text-[9px] font-black uppercase bg-cyan-950/40">
+            DEVELOPER CERDAS
+          </span>
         </div>
       </footer>
     </div>

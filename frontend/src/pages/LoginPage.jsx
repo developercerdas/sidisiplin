@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { School, Lock, Mail, ArrowLeft, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import DeveloperBranding from '../components/DeveloperBranding';
 
 const API_BASE = 'http://localhost:5000/api';
 
@@ -218,6 +219,11 @@ export default function LoginPage({ onLoginSuccess }) {
             </button>
           </div>
         </div>
+      </div>
+
+      {/* DEVELOPER & HARDWARE IDENTITY WIDGET */}
+      <div className="mt-8 w-full max-w-2xl px-2 z-10">
+        <DeveloperBranding />
       </div>
     </div>
   );

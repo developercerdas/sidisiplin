@@ -7,6 +7,7 @@ import {
   QrCode, Settings, Trash2, Smartphone, ShieldCheck, Check, X, CreditCard,
   Menu, PanelLeftClose, PanelLeftOpen
 } from 'lucide-react';
+import DeveloperBranding from '../components/DeveloperBranding';
 
 const API_BASE = 'http://localhost:5000/api';
 
@@ -1140,6 +1141,11 @@ export default function DashboardPage({ user, onLogout }) {
             </form>
           </div>
         )}
+
+        {/* DEVELOPER FOOTER BRANDING */}
+        <div className="mt-12 pt-6 border-t border-slate-800/80">
+          <DeveloperBranding />
+        </div>
       </main>
     </div>
   );
